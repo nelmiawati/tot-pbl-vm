@@ -70,7 +70,7 @@ Vagrant.configure("2") do |config|
   # SHELL
   config.vm.provision "shell", path: "configure-user-access.sh", run: "once"
   config.vm.provision "shell", path: "install-basic-software.sh", run: "once"
-
+  config.vm.provision "shell", path: "install-docker-engine.sh", run: "once"
   
   
   
