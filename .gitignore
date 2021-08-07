@@ -1,1 +1,2 @@
-.vagrant
+.vagrant/**
+.webgoat-8.1.0/**
