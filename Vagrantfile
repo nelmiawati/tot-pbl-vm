@@ -25,6 +25,8 @@ Vagrant.configure("2") do |config|
   # NOTE: This will enable public access to the opened port
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   # config.vm.network "forwarded_port", guest: 22, host: 22
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 9090, host: 9090
   
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
@@ -71,6 +73,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "configure-user-access.sh", run: "once"
   config.vm.provision "shell", path: "install-basic-software.sh", run: "once"
   config.vm.provision "shell", path: "install-docker-engine.sh", run: "once"
+  config.vm.provision "shell", path: "pull-docker-images.sh", run: "once"
+  config.vm.provision "shell", path: "run-docker-containers.sh", run: "always"
+  
   
   
   
